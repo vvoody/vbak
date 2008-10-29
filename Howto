@@ -1,0 +1,93 @@
+Vbak commands available:
+  help    add          files   list
+  update  checkout/co  remove  clear
+
+* vbak help - Online help *
+
+  $ vbak help
+  $ vbak help -t
+
+* vbak add - Backup your files *
+
+  $ vbak add .emacs .emacs.d/ this\ is\ a\ file.txt
+  Add .emacs
+  /home/vvoody/.emacs
+  home-vvoody-.emacs
+  ...
+
+  # Tag the files
+  $ vbak -t opera contacts.adr js/ menu/vvoodysMenu.ini speeddial.ini
+
+  Attention: We will use these 6 files and 1 directory in the future example.
+
+* vbak files/list - Show what you have backuped *
+  $ vbak files [-t TAGNAME]
+  /home/vvoody/.emacs
+  /home/vvoody/.emacs.d
+  /home/vvoody/this is a file.txt
+  /home/vvoody/.opera/contacts.adr
+  /home/vvoody/.opera/js
+  /home/vvoody/.opera/menu/vvoodysMenu.ini
+  /home/vvoody/.opera/speeddial.ini
+
+  $ vbak files -t opera
+  /home/vvoody/.opera/contacts.adr
+  /home/vvoody/.opera/js
+  /home/vvoody/.opera/menu/vvoodysMenu.ini
+  /home/vvoody/.opera/speeddial.ini
+
+  # If the backuped file is not in the repository, vbak will notice you.
+  # Then use vbak update to backup it again.
+  $ vbak list [-t TAGNAME]
+  home-vvoody-.emacs
+  home-vvoody-.emacs.d
+  home-vvoody-this is a file.txt
+  home-vvoody-.opera-contact.adr
+  home-vvoody-.opera-js
+  home-vvoody-.opera-menu-vvoodysMenu.ini *MISSED!*
+  home-vvoody-.opera-speeddial.ini
+
+* vbak update - Update files *
+
+  # If the orignal file is newer than its backuped file, then update.
+  # If the backuped file is missed, vbak will backup it again.
+  $ remove .vbak/home-vvoody-.opera-menu-vvoodysMenu.ini
+  $ vbak update
+  /home/vvoody/.opera/menu/vvoodysMenu.ini *UPDATED!*
+
+  # Update one group of files
+  $ vbak update -t opera
+  ...
+
+* vbak checkout/co - Checkout config file *
+
+  # Recover your config files quickly
+  $ INSTALL OPERA
+  ...
+  $ cd .opera
+  $ vbak co -t opera
+  4 file(s) checkouted!
+  $ opera &
+
+* vbak remove - Unbackup files *
+
+  $ vbak remove -t opera
+  $ vbak files
+  home-vvoody-.emacs
+  home-vvoody-.emacs.d
+  home-vvoody-this is a file.txt
+  $ vbak remove .emacs
+  $ vbak files
+  home-vvoody-.emacs.d
+  home-vvoody-this is a file.txt
+  $
+
+* vbak clear - Clean up the backup repository *
+
+  $ vbak clear
+  We will remove all backuped files and clear up the file.list
+  Are you sure? y
+  $ ls -a .vbak
+  . ..
+  $
+

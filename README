@@ -1,0 +1,91 @@
+README for vbak
+
+vvoody <vvoodyssey{AT}gmail.com>
+
+----------------------------------------------------------------------
+
+Index
+  |-- 0.About
+  |-- 1.Installation & Requirements
+  |-- 2.Configuration
+  |-- 3.Contact Me
+  `-- 4.Acknowledgments
+
+----------------------------------------------------------------------
+
+0. About
+
+  Vbak is a handy tool for backuping your config files in Linux. I hope it
+  make me backup, update, checkout files and show backuped files status easily.
+
+  *Features*
+
+  - Backup multiple files and directories at one time;
+
+  - Tag one file or a group files;
+
+  - Show what you have backuped;
+
+  - Checkout file(s) according to the tag name;
+
+  - Update all backuped files or one group of files tagged automatically;
+
+  - Unbackup files;
+
+  Vbak will copy the file(s) you wanna backup to the vbak backup repository.
+  We will name the backuped file(s) name in our encode way.
+
+  Tag is very useful. When you reinstall a software, you can checkout its
+  config files by tag name.
+
+  * See 'Howto' for usage.
+
+
+
+1. Installation & Requirements
+
+  Copy 'vbak.sh' to your PATH. Don't forget give him executable.
+  Removing the suffix '.sh' makes vbak like a daily command ;-)
+  Vbak is just a bash script. Commands used are very common. No need anymore.
+
+
+
+2. Configuration
+
+  Vbak's config file is under $HOME, named .vbakrc.
+
+  'vbakrc_example' is a example for vbak config file - ~/.vbakrc, you can follow
+  it to set your own backup repository.
+
+
+
+3. Contact Me
+
+  Project Vbak's home page is at:
+  http://vvoodys.googlecode.com/svn/trunk/vbak
+
+  I release vbak under GNU GPL v3. Anybody's reviews and bug report are welcome.
+
+  Bug report:
+
+  - Issues page at home page (recommended);
+  - email me: vvoodyssey{AT}gmail.com;
+
+  Code quality reviews:
+
+  - Use the code review function Googlecode.com applied.
+
+  Misc:
+
+  - email me: vvoodyssey{AT}gmail.com
+
+
+
+4. Acknowledgments
+  
+  Before vbak, I met Qbak created by WANG Cong. I use some functions from him ;-)
+
+  Qbak's home page:
+  http://wangcong.org/project/qbak
+
+END

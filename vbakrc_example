@@ -1,0 +1,10 @@
+# This is comment.
+# We just need VBAK_OUT_DIR.
+# Directory after '=' is the genuine dir for your backup files.
+# 
+# Generated at Tue Oct 28 18:28:36 CST 2008
+
+# Lines like below are OK.
+VBAK_OUT_DIR=.vbak/
+
+VBAK_OUT_DIR = my backups
