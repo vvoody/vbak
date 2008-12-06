@@ -209,17 +209,44 @@ function do_remove() {
     fi
 }
 
+# do_update_dir $my_full_dir_path $orgin_full_bak_path
+do_update_dir() {
+#    echo "/xx/$(basename "$2")"
+    for f in "$1"/*; do
+	f_img="${2}/$(basename "$f")"
+	if [ "$f" -nt "$f_img" ]; then
+	    if [ -d "$f" ]; then
+		rm -rf "$f_img"
+	    fi
+	    cp -rf "$f" "$f_img"
+	    echo -n "$f "
+	    echo -e ${blue}"*UPDATED!*"${clr_normal}
+	else
+	    if [ -d "$f" ]; then
+		do_update_dir "$f" "$f_img";
+	    fi
+	fi
+    done
+}
+
 # do_update $file
 function do_update() {
     # If the file is newer than the backuped file, 
     # then we will update it.
     egrep "$1" "$list_file" > /dev/null
     if [ $? -eq 0 ]; then
-	file_bak_name=$(encode_file_name "$1")
+	file_bak_name="$(encode_file_name "$1")"
 	if [ "$1" -nt "${VBAK_OUT_DIR}/${file_bak_name}" ]; then
+	    if [ -d "$1" ]; then
+		rm -rf "${VBAK_OUT_DIR}/${file_bak_name}"
+	    fi
 	    cp -rf "$1" "${VBAK_OUT_DIR}/${file_bak_name}"
 	    echo -n "${1} "
 	    echo -e ${blue}"*UPDATED!*"${clr_normal}
+	else
+	    if [ -d "$1" ]; then
+		do_update_dir "$1" "${VBAK_OUT_DIR}/${file_bak_name}";
+	    fi
 	fi
     else
 	die 1 "${1} not backuped!"
