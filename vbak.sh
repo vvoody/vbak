@@ -231,6 +231,12 @@ do_update_dir() {
 
 # do_update $file
 function do_update() {
+    # Detect file disappearing
+    if [ ! -r "$1" ]; then
+	echo -e "$1 "${red}" *Disappeared!*"${clr_normal}
+	return 1
+    fi
+
     # If the file is newer than the backuped file, 
     # then we will update it.
     egrep "$1" "$list_file" > /dev/null
