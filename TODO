@@ -1,0 +1,8 @@
+* Issues
+
+1. No using '-t', but there will be a pair of "@@" end of the line when adding.
+
+* TODO
+
+1. Remove the temporary /tmp/vbak.*
+2. 
