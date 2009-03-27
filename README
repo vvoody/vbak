@@ -41,7 +41,7 @@ Index
   * See 'Howto' for usage.
 
   Vbak uses some temporary files like 'vbak.12345.x8D8d9a' under /tmp.
-  Vbak will remove all of them every time vbak executes.
+  Vbak will remove all of them every time vbak executes successfully.
 
 
 

@@ -423,3 +423,6 @@ case "$1" in
 	echo "Unknown command!" >&2
 	usage;;
 esac
+
+# do some cleanup
+rm -f /tmp/vbak.* > /dev/null
