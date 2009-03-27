@@ -1,6 +1,6 @@
 README for vbak
 
-vvoody <vvoodyssey{AT}gmail.com>
+vvoody <wxj{AT}vvoody.org>
 
 ----------------------------------------------------------------------
 
@@ -40,6 +40,9 @@ Index
 
   * See 'Howto' for usage.
 
+  Vbak uses some temporary files like 'vbak.12345.x8D8d9a' under /tmp.
+  Vbak will remove all of them every time vbak executes.
+
 
 
 1. Installation & Requirements
@@ -69,7 +72,7 @@ Index
   Bug report:
 
   - Issues page at home page (recommended);
-  - email me: vvoodyssey{AT}gmail.com;
+  - email me: wxj{AT}vvoody.org
 
   Code quality reviews:
 
@@ -77,15 +80,15 @@ Index
 
   Misc:
 
-  - email me: vvoodyssey{AT}gmail.com
+  - email me: wxj{AT}vvoody.org
 
 
 
 4. Acknowledgments
   
-  Before vbak, I met Qbak created by WANG Cong. I use some functions from him ;-)
+  Before vbak, I met Qbak created by WANG Cong. I referenced some functions from him ;-)
 
   Qbak's home page:
-  http://wangcong.org/project/qbak
+  http://wangcong.org/projects/qbak.html
 
 END

@@ -1,8 +1,9 @@
-* Issues
-
-1. No using '-t', but there will be a pair of "@@" end of the line when adding.
-
 * TODO
 
-1. Remove the temporary /tmp/vbak.*
-2. 
+- Remove the temporary /tmp/vbak.*
+- Excluding some file/dir under some dir.
+- Show tags info.
+
+* Issues
+
+- No using '-t', but there will be a pair of "@@" end of the line when adding.
