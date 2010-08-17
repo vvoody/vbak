@@ -6,5 +6,3 @@
 
 # Lines like below are OK.
 VBAK_OUT_DIR=.vbak/
-
-VBAK_OUT_DIR = my backups
