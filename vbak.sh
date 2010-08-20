@@ -5,11 +5,17 @@
 #
 # vbak first finished without test strongly at 2008-10-20 night
 # vbak can be for daily use, I think, at 2008-10-27 night
+# vbak begins rewriting at Fri Aug 20 CST 2010
 #
 # Get the latest version:
-# svn checkout http://vvoodys.googlecode.com/svn/trunk/vbak vbak
+# git clone git://github.com/vvoody/vbak.git
 #
 # TODO:
+#     1. not make path of file as part of file name, but like unix tree
+#     2. exclude files/dirs(.gitignore?)
+#     3. sync the not excluded files, others will be controled by git
+#     4. reverse syncing files(cp files backuped in storage to their origin place)
+#     5. work with Dropbox
 #     remove the temp files periodically;
 #     find a easy to remove one line from file;
 
@@ -27,7 +33,7 @@ function usage() {
 
 function show_help() {
     if [ -z $1 ]; then
-	echo "Usage: qbak [COMMAND] [OPTION] ..."
+	echo "Usage: vbak [COMMAND] [OPTION] ..."
 	echo "Commands are:"
 	echo -e "\thelp\tadd\tremove\tupdate"
 	echo -e "\tlist\tfiles\tclear\tcheckout/co"
